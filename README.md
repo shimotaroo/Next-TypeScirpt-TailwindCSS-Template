@@ -1,4 +1,4 @@
-# Next,js + TypeScript + Tailwind CSS Template
+# Next.js + TypeScript + Tailwind CSS Template
 
 ## support
 
