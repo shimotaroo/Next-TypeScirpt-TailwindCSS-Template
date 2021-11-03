@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Next.js+TypeScript+Tailwind CSS Template</title>
-        <meta name="description" content="Template of Next.js+TypeScript+Tailwind CSS" />
+        <meta name='description' content='Template of Next.js+TypeScript+Tailwind CSS' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
       <Component {...pageProps} />

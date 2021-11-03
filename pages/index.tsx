@@ -4,18 +4,18 @@ import Link from 'next/link'
 const Home: NextPage = () => {
   return (
     <div className='p-24 bg-gradient-to-r from-green-400 to-blue-500 min-h-screen text-gray-50'>
-        <div className='mb-5'>
-          <h2 className='text-2xl text-center'>Next.js+TypeScript+Tailwind CSS Template</h2>
-        </div>
-        <div className='w-1/4 mx-auto text-lg'>
-          <ul className='mt-3 list-disc list-inside'>
-            <li className='cursor-pointer hover:underline'>
-              <Link href='login'>
-                <a >Login Page</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
+      <div className='mb-5'>
+        <h2 className='text-2xl text-center'>Next.js+TypeScript+Tailwind CSS Template</h2>
+      </div>
+      <div className='w-1/4 mx-auto text-lg'>
+        <ul className='mt-3 list-disc list-inside'>
+          <li className='cursor-pointer hover:underline'>
+            <Link href='login'>
+              <a>Login Page</a>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }
