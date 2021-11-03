@@ -1,5 +1,6 @@
 import { NextPage } from 'next'
 import { useForm } from 'react-hook-form'
+import { RequiredMark } from '@/components/RequiredMark'
 
 type FormData = {
   email: string
@@ -23,7 +24,7 @@ const Login: NextPage = () => {
           <div className='mb-5'>
             <div className=' flex justify-start my-2'>
               <p className=''>メールアドレス</p>
-              <p className='bg-red-400 text-gray-50 py-1 px-2 rounded-full ml-2 text-xs'>必須</p>
+              <RequiredMark />
             </div>
             <input
               {...register('email', { required: true })}
@@ -34,7 +35,7 @@ const Login: NextPage = () => {
           <div className='mb-5'>
             <div className=' flex justify-start my-2'>
               <p className=''>パスワード</p>
-              <p className='bg-red-400 text-gray-50 py-1 px-2 rounded-full ml-2 text-xs'>必須</p>
+              <RequiredMark />
             </div>
             <small className='mb-2 text-gray-500 block'>
               8文字以上の半角英数字で入力してください
