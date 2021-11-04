@@ -1,8 +1,8 @@
 import { NextPage } from 'next'
-import { useForm } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { RequiredMark } from '@/components/RequiredMark'
 
-type FormData = {
+type Inputs = {
   email: string
   password: string
 }
@@ -12,13 +12,13 @@ const Login: NextPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ criteriaMode: 'all' })
+  } = useForm<Inputs>({ criteriaMode: 'all' })
 
-  const handleLoginSubmit = (data: FormData) => alert(JSON.stringify(data))
+  const handleLoginSubmit: SubmitHandler<Inputs> = (data) => alert(JSON.stringify(data))
 
   return (
     <div className='h-screen bg-gray-50'>
-      <div className='w-1/3 mx-auto rounded-xl pt-24'>
+      <div className='w-5/6 sm:w-1/3 mx-auto rounded-xl pt-24'>
         <h2 className='text-center text-3xl py-10'>Login</h2>
         <form onSubmit={handleSubmit(handleLoginSubmit)}>
           <div className='mb-5'>
@@ -27,10 +27,16 @@ const Login: NextPage = () => {
               <RequiredMark />
             </div>
             <input
-              {...register('email', { required: true })}
+              {...register('email', {
+                required: true,
+                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              })}
               className='p-2 border rounded-md w-full outline-none'
             />
-            {errors.email && <p className='py-3 text-red-500'>必須入力です。</p>}
+            {errors.email?.types?.required && <p className='py-3 text-red-500'>必須入力です。</p>}
+            {errors.email?.types?.pattern && (
+              <p className='py-3 text-red-500'>メールアドレスの形式で入力してください。</p>
+            )}
           </div>
           <div className='mb-5'>
             <div className=' flex justify-start my-2'>
@@ -55,7 +61,7 @@ const Login: NextPage = () => {
             <input
               type='submit'
               value='ログイン'
-              className='bg-gray-700 text-gray-50 py-3 px-20 mt-8 rounded-md'
+              className='bg-gray-700 text-gray-50 py-3 sm:px-20 px-10 mt-8 rounded-md'
             />
           </div>
         </form>
