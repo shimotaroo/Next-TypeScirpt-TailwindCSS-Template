@@ -18,7 +18,7 @@ const Login: NextPage = () => {
 
   return (
     <div className='h-screen bg-gray-50'>
-      <div className='w-5/6 sm:w-1/3 mx-auto rounded-xl pt-24'>
+      <div className='w-5/6 sm:w-1/3 mx-auto rounded-xl py-24'>
         <h2 className='text-center text-3xl py-10'>Login</h2>
         <form onSubmit={handleSubmit(handleLoginSubmit)}>
           <div className='mb-5'>
