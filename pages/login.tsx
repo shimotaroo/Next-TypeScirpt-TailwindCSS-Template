@@ -22,8 +22,8 @@ const Login: NextPage = () => {
         <h2 className='text-center text-3xl py-10'>Login</h2>
         <form onSubmit={handleSubmit(handleLoginSubmit)}>
           <div className='mb-5'>
-            <div className=' flex justify-start my-2'>
-              <p className=''>メールアドレス</p>
+            <div className='flex justify-start my-2'>
+              <p>メールアドレス</p>
               <RequiredMark />
             </div>
             <input
@@ -39,8 +39,8 @@ const Login: NextPage = () => {
             )}
           </div>
           <div className='mb-5'>
-            <div className=' flex justify-start my-2'>
-              <p className=''>パスワード</p>
+            <div className='flex justify-start my-2'>
+              <p>パスワード</p>
               <RequiredMark />
             </div>
             <small className='mb-2 text-gray-500 block'>
@@ -61,7 +61,7 @@ const Login: NextPage = () => {
             <input
               type='submit'
               value='ログイン'
-              className='bg-gray-700 text-gray-50 py-3 sm:px-20 px-10 mt-8 rounded-md'
+              className='bg-gray-700 text-gray-50 py-3 sm:px-20 px-10 mt-8 rounded-md cursor-pointer drop-shadow-md hover:bg-gray-600'
             />
           </div>
         </form>
