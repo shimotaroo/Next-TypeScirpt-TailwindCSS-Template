@@ -1,8 +1,13 @@
 import 'tailwindcss/tailwind.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { useRouter } from 'next/dist/client/router'
+import { BackButton } from '@/components/BackButton'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+  const pathname = router.pathname
+
   return (
     <>
       <Head>
@@ -11,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
       <Component {...pageProps} />
+      {<>{pathname !== '/' ? <BackButton /> : null}</>}
     </>
   )
 }
