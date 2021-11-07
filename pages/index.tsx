@@ -9,11 +9,16 @@ const Home: NextPage = () => {
           Next.js+TypeScript+Tailwind CSS Template
         </h2>
       </div>
-      <div className='w-1/4 mx-auto sm:text-lg text-sm'>
+      <div className='sm:w-1/3 w-2/3 mx-auto sm:text-lg text-sm'>
         <ul className='mt-3 list-disc list-inside'>
-          <li className='cursor-pointer hover:underline'>
+          <li className='cursor-pointer hover:underline my-2'>
             <Link href='login'>
               <a>Login Page</a>
+            </Link>
+          </li>
+          <li className='cursor-pointer hover:underline'>
+            <Link href='loginErrorMessage'>
+              <a>Login Page(Using Error Message Component)</a>
             </Link>
           </li>
         </ul>
